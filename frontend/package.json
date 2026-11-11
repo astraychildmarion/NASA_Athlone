@@ -10,14 +10,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@deck.gl/core": "^9.4.1",
+    "@deck.gl/extensions": "^9.4.1",
+    "@deck.gl/layers": "^9.4.1",
+    "@deck.gl/react": "^9.4.1",
+    "@picocss/pico": "^2.1.1",
+    "@turf/boolean-point-in-polygon": "^7.4.0",
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "typescript": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-router-dom": "^7.18.5",
+    "typescript": "latest",
+    "vega": "^6.4.0",
+    "vega-embed": "^7.3.0",
+    "vega-lite": "^6.5.0",
+    "vite": "latest"
   },
   "devDependencies": {
     "@eslint/js": "latest",
+    "@types/geojson": "^7946.0.16",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "eslint": "latest",

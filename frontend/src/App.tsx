@@ -1,15 +1,35 @@
-function App() {
+import { lazy, Suspense } from 'react'
+import { Link, Navigate, Route, Routes } from 'react-router-dom'
+
+const ChartPage = lazy(() => import('./pages/ChartPage'))
+
+function HomePage() {
   return (
-    <main className="page">
-      <section className="card">
+    <main className="home-page">
+      <section className="home-card">
         <p className="eyebrow">NASA Athlone</p>
-        <h1>Frontend is ready.</h1>
+        <h1>Wildfire intelligence, made visible.</h1>
         <p>
-          Start building in <code>frontend/src</code>. The backend team can work in
-          <code> backend</code> within the same repository.
+          Explore an interactive prototype of provincial wildfire risk across
+          Argentina.
         </p>
+        <Link to="/chart" role="button">
+          Open chart prototype
+        </Link>
       </section>
     </main>
+  )
+}
+
+function App() {
+  return (
+    <Suspense fallback={<div className="route-loading">Loading visualization…</div>}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/chart" element={<ChartPage />} />
+        <Route path="*" element={<Navigate to="/chart" replace />} />
+      </Routes>
+    </Suspense>
   )
 }
 
